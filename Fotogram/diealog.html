@@ -1,0 +1,73 @@
+<head>
+    <link rel="stylesheet" href="dialog.css">
+</head>
+<dialog class="dialog" id="Dialog-1">
+    <header>
+        <h3>placeholder.1</h3>
+        <button class="button-2" onclick="closeDialog('Dialog-1')">&times;</button>
+    </header>
+    <section>
+        <img src="./placeholder.1.png" alt="placeholder.1.png">
+    </section>
+    <footer>
+        <button class="button-3" onclick="openDialog('Dialog-5'); closeDialog('Dialog-1')">&lt;</button>
+        <p>1/5</p>
+        <button class="button-3" onclick="openDialog('Dialog-2'); closeDialog('Dialog-1')">&gt;</button>
+    </footer>
+</dialog>
+<dialog class="dialog" id="Dialog-2">
+    <header>
+        <h3>placeholder.2</h3>
+        <button class="button-2" onclick="closeDialog('Dialog-2')">&times;</button>
+    </header>
+    <section>
+        <img src="./placeholder.2.png" alt="placeholder.2.png">
+    </section>
+    <footer>
+        <button class="button-3" onclick="openDialog('Dialog-1'); closeDialog('Dialog-2')">&lt;</button>
+        <p>2/5</p>
+        <button class="button-3" onclick="openDialog('Dialog-3'); closeDialog('Dialog-2')">&gt;</button>
+    </footer>
+</dialog>
+<dialog class="dialog" id="Dialog-3">
+    <header>
+        <h3>placeholder.3</h3>
+        <button class="button-2" onclick="closeDialog('Dialog-3')">&times;</button>
+    </header>
+    <section>
+        <img src="./placeholder.3.png" alt="placeholder.3.png">
+    </section>
+    <footer>
+        <button class="button-3" onclick="openDialog('Dialog-2'); closeDialog('Dialog-3')">&lt;</button>
+        <p>3/5</p>
+        <button class="button-3" onclick="openDialog('Dialog-4'); closeDialog('Dialog-3')">&gt;</button>
+    </footer>
+</dialog>
+<dialog class="dialog" id="Dialog-4">
+    <header>
+        <h3>placeholder.4</h3>
+        <button class="button-2" onclick="closeDialog('Dialog-4')">&times;</button>
+    </header>
+    <section>
+        <img src="./placeholder.4.png" alt="placeholder.4.png">
+    </section>
+    <footer>
+        <button class="button-3" onclick="openDialog('Dialog-3'); closeDialog('Dialog-4')">&lt;</button>
+        <p>4/5</p>
+        <button class="button-3" onclick="openDialog('Dialog-5'); closeDialog('Dialog-4')">&gt;</button>
+    </footer>
+</dialog>
+<dialog class="dialog" id="Dialog-5">
+    <header>
+        <h3>placeholder.5</h3>
+        <button class="button-2" onclick="closeDialog('Dialog-5')">&times;</button>
+    </header>
+    <section>
+        <img src="./placeholder.5.png" alt="placeholder.5.png">
+    </section>
+    <footer>
+        <button class="button-3" onclick="openDialog('Dialog-4'); closeDialog('Dialog-5')">&lt;</button>
+        <p>5/5</p>
+        <button class="button-3" onclick="openDialog('Dialog-1'); closeDialog('Dialog-5')">&gt;</button>
+    </footer>
+</dialog>
