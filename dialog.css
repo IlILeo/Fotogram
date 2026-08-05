@@ -1,0 +1,79 @@
+.dialog {
+    width: 888px;
+    background-color: #0d3240;
+    border-radius: 20px;
+}
+
+dialog.opened::backdrop {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.500);
+    transition: all 5s ease-in;
+}
+
+.dialog header {
+    justify-content: space-between;
+    background-color: #0d3240;
+    width: 566px;
+    height: 30px;
+    margin-top: 78px;
+    margin-left: 61px;
+}
+
+.dialog h3 {
+    color: #fff;
+    font-size: 25px;
+    margin: 0;
+    padding: 20px;
+}
+
+.dialog section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
+
+.dialog section img {
+    width: auto;
+    height: 250px;
+}
+
+.button-2 {
+    background-color: #0d3240;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+    padding: 4px;
+    margin-left: 20px;
+    height: 32px;
+    width: 32px;
+    border-radius: 100px;
+    gap: 10px;
+}
+
+.button-2:hover {
+    background-color: #124658;
+}
+
+.button-2:focus {
+    background-color: #0D3240;
+}
+
+.dialog footer {
+    background-color: #0d3240;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 0;
+}
+
+.button-3 {
+    background-color: #0d3240;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 20px;
+}
