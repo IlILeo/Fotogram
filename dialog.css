@@ -1,5 +1,4 @@
 .dialog {
-    width: 888px;
     background-color: #0d3240;
     border-radius: 20px;
 }
@@ -13,24 +12,12 @@ dialog.opened::backdrop {
 .dialog header {
     justify-content: space-between;
     background-color: #0d3240;
-    width: 566px;
-    height: 30px;
-    margin-top: 78px;
-    margin-left: 61px;
 }
 
 .dialog h3 {
     color: #fff;
     font-size: 25px;
-    margin: 0;
     padding: 20px;
-}
-
-.dialog section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30vh;
 }
 
 .dialog section img {
@@ -40,16 +27,10 @@ dialog.opened::backdrop {
 
 .button-2 {
     background-color: #0d3240;
-    border: none;
     cursor: pointer;
     color: #fff;
     font-size: 20px;
-    padding: 4px;
-    margin-left: 20px;
-    height: 32px;
-    width: 32px;
-    border-radius: 100px;
-    gap: 10px;
+    padding: 10px 20px;
 }
 
 .button-2:hover {
@@ -71,9 +52,19 @@ dialog.opened::backdrop {
 
 .button-3 {
     background-color: #0d3240;
-    border: none;
     cursor: pointer;
     color: #fff;
+    font-size: 20px;
+    padding: 10px 20px;
+}
+
+.button-3:hover {
+    background-color: #1E1E23;
+    border: rgba(0, 0, 0, 0.500);
+    border-radius: 100px;
+    border-block-style: solid;
+    cursor: pointer;
+    color: #FD5B4F;
     font-size: 20px;
     padding: 10px 20px;
 }

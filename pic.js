@@ -13,7 +13,6 @@ function openDialog(dialogId) {
     }
 }
 
-
 function closeDialog(dialogId) {
     const dialogref = document.getElementById(dialogId);
     if (dialogref) {
@@ -22,4 +21,4 @@ function closeDialog(dialogId) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', loadDialog);
+loadDialog();
