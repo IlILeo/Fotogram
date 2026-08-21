@@ -1,36 +1,52 @@
 .dialog {
     background-color: #0d3240;
-    border-radius: 20px;
+    border: 1px solid #1d5968;
+    border-radius: 12px;
+    color: #fff;
+    max-width: 90vw;
+    max-height: 90vh;
+    padding: 0;
 }
 
-dialog.opened::backdrop {
-    opacity: 1;
+dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.500);
-    transition: all 5s ease-in;
 }
 
 .dialog header {
+    align-items: center;
+    display: flex;
     justify-content: space-between;
     background-color: #0d3240;
 }
 
 .dialog h3 {
     color: #fff;
-    font-size: 25px;
-    padding: 20px;
+    font-size: 22px;
+    margin: 0;
+    padding: 16px 20px;
+}
+
+.dialog section {
+    display: flex;
+    justify-content: center;
+    padding: 12px 20px;
 }
 
 .dialog section img {
+    height: auto;
+    max-height: 65vh;
+    max-width: 80vw;
+    object-fit: contain;
     width: auto;
-    height: 250px;
 }
 
 .button-2 {
     background-color: #0d3240;
+    border: none;
     cursor: pointer;
     color: #fff;
     font-size: 20px;
-    padding: 10px 20px;
+    padding: 8px 16px;
 }
 
 .button-2:hover {
@@ -44,27 +60,63 @@ dialog.opened::backdrop {
 .dialog footer {
     background-color: #0d3240;
     color: #fff;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding-bottom: 0;
+    align-items: center;
+    display: grid;
+    margin-top: 0;
+    grid-template-columns: 1fr auto 1fr;
+    padding: 12px 20px 16px;
+}
+
+.dialog footer p {
+    margin: 0;
+    text-align: center;
+}
+
+.dialog footer .button-3:first-child  {
+    justify-self: center;
+}
+
+.dialog footer .button-3:last-child {
+    justify-self: center;
 }
 
 .button-3 {
     background-color: #0d3240;
+    border: none;
+    border-radius: 50%;
     cursor: pointer;
     color: #fff;
     font-size: 20px;
-    padding: 10px 20px;
+    height: 44px;
+    width: 44px;
 }
 
 .button-3:hover {
     background-color: #1E1E23;
-    border: rgba(0, 0, 0, 0.500);
-    border-radius: 100px;
-    border-block-style: solid;
-    cursor: pointer;
     color: #FD5B4F;
-    font-size: 20px;
-    padding: 10px 20px;
+}
+
+@media (max-width: 750px) {
+    .dialog {
+        max-width: calc(100vw - 24px);
+        max-height: calc(100vh - 24px);
+    }
+
+    .dialog section {
+        padding: 8px 10px;
+    }
+
+    .dialog section img {
+        max-height: 58vh;
+        max-width: calc(100vw - 48px);
+    }
+
+    .dialog h3 {
+        font-size: 18px;
+        padding: 12px 14px;
+    }
+
+    .dialog footer {
+        padding: 8px 10px 12px;
+    }
 }
