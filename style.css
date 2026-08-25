@@ -35,7 +35,6 @@ main {
     background-color: #05171e;
     padding: 20px;
     flex: 1;
-    overflow: hidden;
 }
 
 h2 {
@@ -90,16 +89,20 @@ h4 a:hover {
 }
 
 .gallery img {
-    gap: 20px;
     width: auto;
     height: 150px;
     border: 1px solid #5f5f5f;
     border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
 }
 
 .gallery img:hover {
     transform: scale(1.1);
-    transition: transform 0.5s ease-in-out;
+}
+
+.gallery button:focus-visible {
+    outline: 2px solid #00ffd8;
+    outline-offset: 4px;
 }
 
 button {
