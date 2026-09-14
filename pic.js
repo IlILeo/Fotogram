@@ -1,10 +1,13 @@
 const pictures = [{ image: "./img/Talk.png", alt: "Talk" }, { image: "./img/Leo-may.PNG", alt: "Leo May" }, { image: "./img/Leo-juni.PNG", alt: "Leo June" }, { image: "./img/Leo-juli.png", alt: "Leo July" }, { image: "./img/IlILeo__winter.png", alt: "Leo Winter" }, { image: "./img/IlILeobird.png", alt: "Leo Bird" }, { image: "./img/IlILeostar.png", alt: "Leo Star" }, { image: "./img/Leo bird.png", alt: "Leo Bird 2" }, { image: "./img/Leo_Birb.png", alt: "Leo Birb" }];
+let current = 0;
 const gallery = document.querySelector(".gallery");
-gallery.innerHTML = [pictures.slice(0, 1), pictures.slice(1, 4), pictures.slice(4)].map((group) => `<div class="gallery-pics">${group.map((picture) => `<button type="button" data-picture="${pictures.indexOf(picture)}" aria-label="${picture.alt} öffnen"><img src="${picture.image}" alt="${picture.alt}" loading="lazy"></button>`).join("")}</div>`).join("");
-fetch("diealog.html").then((response) => response.text()).then((html) => {
-    document.body.insertAdjacentHTML("afterbegin", html);
-    const dialog = document.querySelector(".dialog");
-    const show = (index) => { const picture = pictures[index]; dialog.querySelector("h3").textContent = picture.alt; dialog.querySelector("img").src = picture.image; dialog.querySelector("img").alt = picture.alt; dialog.querySelector(".count").textContent = `${index + 1}/${pictures.length}`; dialog.dataset.index = index; dialog.showModal(); };
-    gallery.addEventListener("click", (event) => { const button = event.target.closest("[data-picture]"); if (button) show(+button.dataset.picture); });
-    dialog.addEventListener("click", (event) => { const action = event.target.dataset.action; if (action === "close") dialog.close(); if (["prev", "next"].includes(action)) show((+dialog.dataset.index + (action === "next" ? 1 : -1) + pictures.length) % pictures.length); });
-}).catch(console.error);
+fetch("diealog.html").then((response) => response.text()).then((dialogFile) => {
+document.body.insertAdjacentHTML("afterbegin", dialogFile);
+const dialog = document.querySelector("#dialog"), title = document.querySelector("#dialog-title"), image = document.querySelector("#dialog-image"), counter = document.querySelector("#dialog-counter");
+function show(index) { current = (index + pictures.length) % pictures.length; const picture = pictures[current]; title.textContent = picture.alt; image.src = picture.image; image.alt = picture.alt; counter.textContent = `${current + 1}/${pictures.length}`; dialog.showModal(); dialog.classList.add("opened"); }
+const groups = [0, 1, 4]; pictures.forEach((picture, index) => { const button = document.createElement("button"), photo = document.createElement("img"); button.type = "button"; button.setAttribute("aria-label", `${picture.alt} öffnen`); photo.src = picture.image; photo.alt = picture.alt; photo.loading = "lazy"; button.append(photo); button.onclick = () => show(index); const row = groups.includes(index) ? document.createElement("div") : gallery.lastElementChild; if (groups.includes(index)) { row.className = "gallery-pics"; gallery.append(row); } row.append(button); });
+document.querySelector("#dialog-close").onclick = () => dialog.close();
+document.querySelector("#dialog-prev").onclick = () => show(current - 1);
+document.querySelector("#dialog-next").onclick = () => show(current + 1);
+document.addEventListener("keydown", (event) => { if (dialog.open && ["ArrowLeft", "ArrowRight"].includes(event.key)) { event.preventDefault(); show(current + (event.key === "ArrowRight" ? 1 : -1)); } });
+});

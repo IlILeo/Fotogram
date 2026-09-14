@@ -1,12 +1,14 @@
-<dialog class="dialog">
+<dialog class="dialog" id="dialog">
     <header>
-        <h3></h3>
-        <button class="button-2" type="button" data-action="close" aria-label="Dialog schließen">&times;</button>
+        <h3 id="dialog-title"></h3>
+        <button class="button-2" id="dialog-close" type="button">&times;</button>
     </header>
-    <section><img src="" alt=""></section>
+    <section>
+        <img id="dialog-image" src="" alt="">
+    </section>
     <footer>
-        <button class="button-3" type="button" data-action="prev" aria-label="Vorheriges Bild">&lt;</button>
-        <p class="count"></p>
-        <button class="button-3" type="button" data-action="next" aria-label="Nächstes Bild">&gt;</button>
+        <button class="button-3" id="dialog-prev" type="button">&lt;</button>
+        <p id="dialog-counter"></p>
+        <button class="button-3" id="dialog-next" type="button">&gt;</button>
     </footer>
 </dialog>
