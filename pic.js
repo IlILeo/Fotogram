@@ -1,4 +1,4 @@
-const pictures = [{ image: "./img/Talk.png", alt: "Talk" }, { image: "./img/Leo-may.PNG", alt: "Leo May" }, { image: "./img/Leo-juni.PNG", alt: "Leo June" }, { image: "./img/Leo-juli.png", alt: "Leo July" }, { image: "./img/IlILeo__winter.png", alt: "Leo Winter" }, { image: "./img/IlILeobird.png", alt: "Leo Bird" }, { image: "./img/IlILeostar.png", alt: "Leo Star" }, { image: "./img/Leo bird.png", alt: "Leo Bird 2" }, { image: "./img/Leo_Birb.png", alt: "Leo Birb" }];
+const pictures = [{ image: "./img/talk.png", alt: "Talk" }, { image: "./img/Leo-may.PNG", alt: "Leo May" }, { image: "./img/Leo-juni.PNG", alt: "Leo June" }, { image: "./img/Leo-juli.png", alt: "Leo July" }, { image: "./img/IlILeo__winter.png", alt: "Leo Winter" }, { image: "./img/IlILeobird.png", alt: "Leo Bird" }, { image: "./img/IlILeostar.png", alt: "Leo Star" }, { image: "./img/Leo bird.png", alt: "Leo Bird 2" }, { image: "./img/Leo_Birb.png", alt: "Leo Birb" }];
 let current = 0;
 const gallery = document.querySelector(".gallery");
 fetch("diealog.html").then((response) => response.text()).then((dialogFile) => {
